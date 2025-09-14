@@ -44,7 +44,8 @@ namespace LineUp
             break;
 
         case DiscKind.Magnetic:
-            MagneticEffect(gs, row, player);
+            MagneticEffect(gs, col, player);
+            ApplyGravityColumn(gs, col);
             PrintFrame("Magnetic disc used", gs);
             break;
     }
@@ -315,6 +316,7 @@ namespace LineUp
             if (row < 0) return false;
 
             Place(gs, row, col, player.Id, kind);
+            ApplyGravityColumn(gs, col);
             switch (kind)
             {
                 case DiscKind.Boring:
@@ -322,7 +324,8 @@ namespace LineUp
                     gs.Grid[0][col].Kind = DiscKind.Ordinary;
                     break;
                 case DiscKind.Magnetic:
-                    MagneticEffect(gs, row, player);
+                    MagneticEffect(gs, col, player);
+                    ApplyGravityColumn(gs, col);
                     break;
             }
             SpendDisc(player, kind);
