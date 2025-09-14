@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ifn584_a1game/1.0.0": {
+        "runtime": {
+          "ifn584_a1game.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ifn584_a1game/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
