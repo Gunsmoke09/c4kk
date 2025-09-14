@@ -6,13 +6,19 @@ namespace LineUp
     {
         public static void RunTestingMode(string line)
         {
-            // testing game default setting (grid size 6*7 and only human vs human)
-            var gs = GameState.CreateNew(6, 7, GameMode.HvH);
+            // Determine required board size based on moves
+            var idv_moves = line.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            int maxCol = 7;
+            foreach (var m in idv_moves)
+            {
+                if (Parser.TryParseMove(new[] { m }, out _, out var c))
+                    if (c + 1 > maxCol) maxCol = c + 1;
+            }
+
+            // testing game default setting (6 rows, dynamic columns and only human vs human)
+            var gs = GameState.CreateNew(6, maxCol, GameMode.HvH);
             Console.WriteLine("Testing mode: parsing moves order. P1 starts the move first.");
             Console.WriteLine($"Input: {line}");
-
-            // Split the input line into individual moves
-            var idv_moves = line.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
             foreach (var move in idv_moves)
             {
@@ -30,7 +36,6 @@ namespace LineUp
                     break;
                 }
 
-                // Stop if the game is over after this move
                 if (gs.GameOver) break;
             }
 
