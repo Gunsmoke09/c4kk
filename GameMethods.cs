@@ -13,7 +13,7 @@ namespace LineUp
         public static bool ApplyMove(GameState gs, DiscKind kind, int col)
         {
             if (col < 0 || col >= gs.Cols) { Console.WriteLine("Column out of range."); return false; }
-            if (gs.ColumnFull(col)) { Console.WriteLine("That column is full."); return false; }
+            if (gs.ColumnFull(col) && kind != DiscKind.Boring) { Console.WriteLine("That column is full."); return false; }
 
             var player = gs.CurrentPlayer;
             if (!HasDisc(player, kind))
@@ -23,26 +23,26 @@ namespace LineUp
             }
 
             int row = gs.DropToRow(col);
-            if (row < 0) { Console.WriteLine("No space in column."); return false; }
+            if (row < 0 && kind != DiscKind.Boring) { Console.WriteLine("No space in column."); return false; }
 
-            Place(gs, row, col, player.Id, kind);
-            PrintFrame("Ordinary disc used", gs);
-
-            switch (kind)
+            if (kind == DiscKind.Boring)
             {
-                case DiscKind.Ordinary:
-                    break;
-
-                case DiscKind.Boring:
-                    BoreColumn(gs, col, player);
-                    PrintFrame("Boring disc used", gs);
-                    gs.Grid[0][col].Kind = DiscKind.Ordinary;
-                    break;
-
-                case DiscKind.Magnetic:
-                    MagneticEffect(gs, row, player);
+                if (row >= 0)
+                    Place(gs, row, col, player.Id, kind);
+                PrintFrame("Ordinary disc used", gs);
+                BoreColumn(gs, col, player);
+                PrintFrame("Boring disc used", gs);
+                gs.Grid[0][col].Kind = DiscKind.Ordinary;
+            }
+            else
+            {
+                Place(gs, row, col, player.Id, kind);
+                PrintFrame("Ordinary disc used", gs);
+                if (kind == DiscKind.Magnetic)
+                {
+                    MagneticEffect(gs, col, player);
                     PrintFrame("Exploding disc used", gs);
-                    break;
+                }
             }
 
             SpendDisc(player, kind);
@@ -51,6 +51,11 @@ namespace LineUp
             {
                 gs.GameOver = true;
                 gs.Winner = player.Id;
+            }
+            else if (IsWin(gs, gs.OtherPlayer.Id))
+            {
+                gs.GameOver = true;
+                gs.Winner = gs.OtherPlayer.Id;
             }
             else if (IsTie(gs))
             {
@@ -116,7 +121,9 @@ namespace LineUp
                 }
             }
             // After the effect, the magnetic disc becomes an ordinary disc
-            gs.Grid[gs.Rows - 1][col].Kind = DiscKind.Ordinary;
+            int mRow = gs.DropToRow(col) - 1;
+            if (mRow >= 0)
+                gs.Grid[mRow][col].Kind = DiscKind.Ordinary;
             // Apply gravity to all columns after the magnetic effect
             for (int c = 0; c < gs.Cols; c++)
             {
@@ -304,26 +311,30 @@ namespace LineUp
 
         public static bool ApplyMoveNoFrames(GameState gs, DiscKind kind, int col)
         {
-            if (col < 0 || col >= gs.Cols || gs.ColumnFull(col)) return false;
+            if (col < 0 || col >= gs.Cols) return false;
+            if (gs.ColumnFull(col) && kind != DiscKind.Boring) return false;
             var player = gs.CurrentPlayer;
             if (!HasDisc(player, kind)) return false;
             int row = gs.DropToRow(col);
-            if (row < 0) return false;
+            if (row < 0 && kind != DiscKind.Boring) return false;
 
-            Place(gs, row, col, player.Id, kind);
-            switch (kind)
+            if (kind == DiscKind.Boring)
             {
-                case DiscKind.Boring:
-                    BoreColumn(gs, col, player);
-                    gs.Grid[0][col].Kind = DiscKind.Ordinary;
-                    break;
-                case DiscKind.Magnetic:
-                    MagneticEffect(gs, row, player);
-                    break;
+                if (row >= 0)
+                    Place(gs, row, col, player.Id, kind);
+                BoreColumn(gs, col, player);
+                gs.Grid[0][col].Kind = DiscKind.Ordinary;
+            }
+            else
+            {
+                Place(gs, row, col, player.Id, kind);
+                if (kind == DiscKind.Magnetic)
+                    MagneticEffect(gs, col, player);
             }
             SpendDisc(player, kind);
 
             if (IsWin(gs, player.Id)) { gs.GameOver = true; gs.Winner = player.Id; }
+            else if (IsWin(gs, gs.OtherPlayer.Id)) { gs.GameOver = true; gs.Winner = gs.OtherPlayer.Id; }
             else if (IsTie(gs)) gs.GameOver = true;
             else gs.CurrentTurn = gs.CurrentTurn == PlayerId.P1 ? PlayerId.P2 : PlayerId.P1;
 

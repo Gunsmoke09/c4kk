@@ -28,10 +28,10 @@ namespace LineUp
             if (kind == DiscKind.Invalid) return false;
 
             // Validate column number
-            if (!int.TryParse(num, out int col1)) return false;   
-            if (col1 <= 0 || col1 > 7) return false;            
+            if (!int.TryParse(num, out int col1)) return false;
+            if (col1 <= 0) return false;
 
-            colIndex0 = col1 - 1;   
+            colIndex0 = col1 - 1;
             return true;
         }
     }
