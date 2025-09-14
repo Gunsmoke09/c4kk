@@ -20,7 +20,7 @@ public static void PrintGrid(GameState gs)
     var sb = new StringBuilder();
 
     // Loop through rows (top to bottom) to display rows
-    for (int r = 0; r < gs.Rows; r++)
+    for (int r = gs.Rows - 1; r >= 0; r--)
     {
         // Loop through each column in the row
         for (int c = 0; c < gs.Cols; c++)
