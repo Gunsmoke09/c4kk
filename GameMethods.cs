@@ -42,7 +42,16 @@ namespace LineUp
             {
                 Place(gs, row, col, player.Id, kind);
             }
-            PrintFrame("Ordinary disc used", gs);
+
+            // Show the initial placement of the disc
+            var placeTitle = kind switch
+            {
+                DiscKind.Ordinary  => "Ordinary disc used",
+                DiscKind.Boring    => "Boring disc placed",
+                DiscKind.Magnetic  => "Magnetic disc placed",
+                _                  => "Disc placed"
+            };
+            PrintFrame(placeTitle, gs);
 
             switch (kind)
             {
@@ -56,8 +65,8 @@ namespace LineUp
                     break;
 
                 case DiscKind.Magnetic:
-                    MagneticEffect(gs, col, player);
-                    PrintFrame("Exploding disc used", gs);
+                    MagneticEffect(gs, col, row, player);
+                    PrintFrame("Magnetic disc used", gs);
                     break;
             }
 
@@ -113,36 +122,25 @@ namespace LineUp
             gs.Grid[0][col].Kind = DiscKind.Boring;
         }
 
-        public static void MagneticEffect(GameState gs, int col, Player actor)
+        public static void MagneticEffect(GameState gs, int col, int magnetRow, Player actor)
         {
-            // Loop from the bottom of the column upwards to find the first "ordinary" disc
-            for (int r = gs.Rows - 1; r > 0; r--)  // Starting from the second-to-last row
+            // search below the magnetic disc for the nearest ordinary disc belonging to the player
+            for (int r = magnetRow - 1; r >= 0; r--)
             {
                 var cell = gs.Grid[r][col];
-                // If the current cell is not empty and belongs to the current player
                 if (!cell.IsEmpty && cell.Owner == actor.Id && cell.Kind == DiscKind.Ordinary)
                 {
-                    // Check if the nearest ordinary disc is directly below the magnetic disc
-                    if (gs.Grid[r - 1][col].IsEmpty)
-                    {
-                        // Lift the ordinary disc one row upwards
-                        gs.Grid[r - 1][col] = cell;
-                        gs.Grid[r][col] = new Cell();  // Empty the original cell
-                        break;  // Only lift one disc, exit the loop after lifting
-                    }
-                    else
-                    {
-                        break;  // No effect if the nearest disc is immediately below
-                    }
+                    // if the disc is directly beneath the magnet, nothing happens
+                    if (r + 1 == magnetRow) break;
+
+                    // swap the disc with the cell above it
+                    (gs.Grid[r + 1][col], gs.Grid[r][col]) = (gs.Grid[r][col], gs.Grid[r + 1][col]);
+                    break;
                 }
             }
-            // After the effect, the magnetic disc becomes an ordinary disc
-            gs.Grid[gs.Rows - 1][col].Kind = DiscKind.Ordinary;
-            // Apply gravity to all columns after the magnetic effect
-            for (int c = 0; c < gs.Cols; c++)
-            {
-                ApplyGravityColumn(gs, c);  // Apply gravity to each column to fill gaps
-            }
+
+            // after activation the magnetic disc becomes ordinary
+            gs.Grid[magnetRow][col].Kind = DiscKind.Ordinary;
         }
 
 
@@ -351,7 +349,7 @@ namespace LineUp
                     gs.Grid[0][col].Kind = DiscKind.Ordinary;
                     break;
                 case DiscKind.Magnetic:
-                    MagneticEffect(gs, col, player);
+                    MagneticEffect(gs, col, row, player);
                     break;
             }
             SpendDisc(player, kind);

@@ -9,8 +9,8 @@ namespace LineUp
         {
             Console.WriteLine($"Mode: {gs.Mode} | Gird Size: {gs.Rows}x{gs.Cols} | WinLength: {gs.WinLength}");
             Console.WriteLine($"Turn: {(gs.CurrentTurn == PlayerId.P1 ? "P1" : "P2")}");
-            Console.WriteLine($"P1: @={gs.P1.OrdinaryCount}, B={gs.P1.BoringCount}, E={gs.P1.MagneticCount}");
-            Console.WriteLine($"P2: #={gs.P2.OrdinaryCount}, b={gs.P2.BoringCount}, e={gs.P2.MagneticCount}");
+            Console.WriteLine($"P1: @={gs.P1.OrdinaryCount}, B={gs.P1.BoringCount}, M={gs.P1.MagneticCount}");
+            Console.WriteLine($"P2: #={gs.P2.OrdinaryCount}, b={gs.P2.BoringCount}, m={gs.P2.MagneticCount}");
             Console.WriteLine();
         }
         public static void PrintGrid(GameState gs)
