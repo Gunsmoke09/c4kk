@@ -1,0 +1,294 @@
+{
+  "Rows": 7,
+  "Cols": 7,
+  "WinLength": 4,
+  "Mode": "HvC",
+  "CurrentTurn": "P1",
+  "Grid": [
+    [
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "P1",
+        "Kind": "Ordinary",
+        "IsEmpty": false
+      },
+      {
+        "Owner": "P2",
+        "Kind": "Ordinary",
+        "IsEmpty": false
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      }
+    ],
+    [
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      }
+    ],
+    [
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      }
+    ],
+    [
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      }
+    ],
+    [
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      }
+    ],
+    [
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      }
+    ],
+    [
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      },
+      {
+        "Owner": "None",
+        "Kind": "Ordinary",
+        "IsEmpty": true
+      }
+    ]
+  ],
+  "P1": {
+    "Id": "P1",
+    "OrdinaryChar": "@",
+    "BoringChar": "B",
+    "ExplodingChar": "E"
+  },
+  "P2": {
+    "Id": "P2",
+    "OrdinaryChar": "#",
+    "BoringChar": "b",
+    "ExplodingChar": "e"
+  },
+  "GameOver": false,
+  "Winner": "None",
+  "CurrentPlayer": {
+    "Id": "P1",
+    "OrdinaryChar": "@",
+    "BoringChar": "B",
+    "ExplodingChar": "E"
+  },
+  "OtherPlayer": {
+    "Id": "P2",
+    "OrdinaryChar": "#",
+    "BoringChar": "b",
+    "ExplodingChar": "e"
+  }
+}

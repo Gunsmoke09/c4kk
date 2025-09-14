@@ -1,0 +1,28 @@
+C:/Users/kakiy/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.exe
+C:/Users/kakiy/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.deps.json
+C:/Users/kakiy/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.runtimeconfig.json
+C:/Users/kakiy/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.dll
+C:/Users/kakiy/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.pdb
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.AssemblyInfoInputs.cache
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.AssemblyInfo.cs
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.csproj.CoreCompileInputs.cache
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.dll
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/refint/ifn584_a1game.dll
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.pdb
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.genruntimeconfig.cache
+C:/Users/kakiy/ifn584_a1game/obj/Debug/net8.0/ref/ifn584_a1game.dll
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.deps.json
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.runtimeconfig.json
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.dll
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/bin/Debug/net8.0/ifn584_a1game.pdb
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.GeneratedMSBuildEditorConfig.editorconfig
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.AssemblyInfoInputs.cache
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.AssemblyInfo.cs
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.csproj.CoreCompileInputs.cache
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.dll
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/refint/ifn584_a1game.dll
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.pdb
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ifn584_a1game.genruntimeconfig.cache
+/Users/anant/Desktop/Uni/Other/Ka ki/ifn584_a1game/obj/Debug/net8.0/ref/ifn584_a1game.dll
